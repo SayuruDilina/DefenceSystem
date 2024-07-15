@@ -329,7 +329,7 @@ public class Submarine extends javax.swing.JFrame implements Observer {
     
       @Override
      public void SendMessagePrivatelyFromMain(String MainSelected, boolean MainStatus, String privateMessage){
-       if ( MainStatus == true && MainSelected=="Submarine"  ) {
+       if ( MainStatus == true && MainSelected.equals("Submarine")  ) {
              SumraineMainTextArea.append("\n Private Message:"+privateMessage);
           
         } else if(MainStatus==false){

@@ -280,9 +280,9 @@ public class MainController extends javax.swing.JFrame {
             
       
         // System.out.println(selectedItem);
-                   jLabel9.setText(""+details[0]);                      
-           jLabel7.setText(""+details[1]);
-          jLabel8.setText(""+details[2]);
+          jLabel7.setText(""+details[0]);                      
+          jLabel8.setText(""+details[1]);
+          jLabel9.setText(""+details[2]);
             
          /*         if(selectedItem=="Tank"){
             jLabel9.setText(""+(int)tank.jSlider1.getValue());                
@@ -298,22 +298,25 @@ public class MainController extends javax.swing.JFrame {
          }*/
            
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    boolean select = false;
     private void AreaClearBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AreaClearBoxActionPerformed
         // TODO add your handling code here:
-        AreaClearBox.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                boolean select = AreaClearBox.isSelected();
-               
+        //AreaClearBox.addActionListener(new ActionListener() {
+            //@Override
+            //public void actionPerformed(ActionEvent e) {
+                //boolean select = AreaClearBox.isSelected();
+                System.out.println(select);
 
-                if (select == true) {
-                     observable.setArea(true);
+                if(select) {
+                    select = false;
+                     //observable.setArea(select);
                 } else {
-                    observable.setArea(false);
+                    select = true;
+                    //observable.setArea(select);
                 }
-            }
-        });
+                observable.setArea(select);
+            
+        //});
        
     }//GEN-LAST:event_AreaClearBoxActionPerformed
 
@@ -327,7 +330,7 @@ public class MainController extends javax.swing.JFrame {
 
     // observable. SetMainmessge(message);
     
-         String message=jTextArea1.getText();
+                String message=jTextArea1.getText();
                 boolean select = jCheckBox1.isSelected();
                 String selectedItem = (String) jComboBox5.getSelectedItem();  
                 observable.SetPrivateMessage ( message,select, selectedItem);
