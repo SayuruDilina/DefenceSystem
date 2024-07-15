@@ -13,6 +13,9 @@ public class Tank extends javax.swing.JFrame implements Observer{
     /**
      * Creates new form Tank
      */
+    int spinnerValue; 
+       int Ammo;
+       int Value;
      private  MainController mainController;
      public Tank() {
       
@@ -86,11 +89,23 @@ public class Tank extends javax.swing.JFrame implements Observer{
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Soldier Count");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 18, -1, -1));
+
+        jSpinner1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinner1StateChanged(evt);
+            }
+        });
         getContentPane().add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(402, 15, -1, -1));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Ammo Count");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 46, -1, -1));
+
+        jSpinner2.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinner2StateChanged(evt);
+            }
+        });
         getContentPane().add(jSpinner2, new org.netbeans.lib.awtextra.AbsoluteConstraints(402, 43, -1, -1));
 
         jCheckBox1.setBackground(new java.awt.Color(0, 92, 11));
@@ -120,6 +135,11 @@ public class Tank extends javax.swing.JFrame implements Observer{
         jSlider1.setOrientation(javax.swing.JSlider.VERTICAL);
         jSlider1.setPaintLabels(true);
         jSlider1.setPaintTicks(true);
+        jSlider1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSlider1StateChanged(evt);
+            }
+        });
         getContentPane().add(jSlider1, new org.netbeans.lib.awtextra.AbsoluteConstraints(472, 6, -1, 282));
 
         jPanel1.setBackground(new java.awt.Color(0, 92, 11));
@@ -137,6 +157,21 @@ public class Tank extends javax.swing.JFrame implements Observer{
     private void MissileBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MissileBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_MissileBtnActionPerformed
+
+    private void jSpinner1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner1StateChanged
+        // TODO add your handling code here:
+        spinnerValue = (int) jSpinner1.getValue();
+    }//GEN-LAST:event_jSpinner1StateChanged
+
+    private void jSpinner2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner2StateChanged
+        // TODO add your handling code here:
+        Ammo = (int) jSpinner2.getValue();
+    }//GEN-LAST:event_jSpinner2StateChanged
+
+    private void jSlider1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSlider1StateChanged
+        // TODO add your handling code here:
+        Value=(int)jSlider1.getValue();
+    }//GEN-LAST:event_jSlider1StateChanged
 
     /**
      * @param args the command line arguments
@@ -186,12 +221,19 @@ public class Tank extends javax.swing.JFrame implements Observer{
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    public static javax.swing.JSlider jSlider1;
-    public static javax.swing.JSpinner jSpinner1;
-    public static javax.swing.JSpinner jSpinner2;
+    private javax.swing.JSlider jSlider1;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JSpinner jSpinner2;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
- @Override
+
+     public int[] getDetails(){
+        
+        int[] ar = {spinnerValue,Ammo, Value};
+        return ar;
+       
+} 
+    @Override
      public void SendMessagePrivatelyFromMain(String MainSelected, boolean MainStatus, String privateMessage){
        System.out.println(MainSelected);
          if ( MainStatus == true && MainSelected =="Tank"  ) {

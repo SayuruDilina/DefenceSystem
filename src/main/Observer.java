@@ -14,4 +14,5 @@ public interface Observer {
        public void btnEnable(int Value);
        public void SendMessagePrivatelyFromMain(String MainSelected, boolean MainStatus, String privateMessage);  
         //public void setDetails( int spinnerValue );
+        public int[] getDetails();
 }

@@ -59,7 +59,19 @@ public class Observable {
 			notifyMsg();
 		}
 	}
+        public int[] setDetails(String item){
+            if(item=="Helicopter"){
+                return observerList.get(0).getDetails();
+            }
+            if(item=="Submarine"){
+                return observerList.get(1).getDetails();
+            }
+             if(item=="Tank"){
+                return observerList.get(2).getDetails();
+            }
+            return null;
         
+        }
 	public void notifyArea(){
 		for(Observer ob : observerList){
 			ob.updateArea(status);

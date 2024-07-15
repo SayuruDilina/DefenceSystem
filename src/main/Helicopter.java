@@ -23,6 +23,9 @@ public class Helicopter extends javax.swing.JFrame implements Observer {
 //      public Helicopter(MainController maincontroller) {
 //        
 //    }
+       int spinnerValue; 
+       int Ammo;
+       int Value;
     public Helicopter(MainController mainController) {
         this.mainController = mainController;
         initComponents();
@@ -123,6 +126,11 @@ public class Helicopter extends javax.swing.JFrame implements Observer {
         jSlider1.setOrientation(javax.swing.JSlider.VERTICAL);
         jSlider1.setPaintLabels(true);
         jSlider1.setPaintTicks(true);
+        jSlider1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSlider1StateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -225,17 +233,22 @@ public class Helicopter extends javax.swing.JFrame implements Observer {
 
     private void jSpinner1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner1StateChanged
         // TODO add your handling code here:
-           int spinnerValue = (int) jSpinner1.getValue();
+           spinnerValue = (int) jSpinner1.getValue();
            /* mainController.Details(spinnerValue);
             System.out.println(spinnerValue);        */
     }//GEN-LAST:event_jSpinner1StateChanged
 
     private void jSpinner2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner2StateChanged
         // TODO add your handling code here:
-        int Ammo = (int) jSpinner2.getValue();
-            mainController.Details2(Ammo);
+         Ammo = (int) jSpinner2.getValue();
+           
             System.out.println(Ammo);
     }//GEN-LAST:event_jSpinner2StateChanged
+
+    private void jSlider1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSlider1StateChanged
+        // TODO add your handling code here:
+       Value=(int)jSlider1.getValue();
+    }//GEN-LAST:event_jSlider1StateChanged
 
     /**
      * @param args the command line arguments
@@ -286,11 +299,17 @@ public class Helicopter extends javax.swing.JFrame implements Observer {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    public static javax.swing.JSlider jSlider1;
-    public static javax.swing.JSpinner jSpinner1;
-    public static javax.swing.JSpinner jSpinner2;
+    private javax.swing.JSlider jSlider1;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JSpinner jSpinner2;
     // End of variables declaration//GEN-END:variables
 
+    public int[] getDetails(){
+        
+        int[] ar = {spinnerValue,Ammo, Value};
+        return ar;
+       
+} 
     @Override
      public void SendMessagePrivatelyFromMain(String MainSelected, boolean MainStatus, String privateMessage){
        if ( MainStatus == true && MainSelected=="Helicopter"  ) {

@@ -17,7 +17,9 @@ public class Submarine extends javax.swing.JFrame implements Observer {
      * Creates new form Submarine
      */
       private  MainController mainController;
-    
+    int spinnerValue; 
+       int Ammo;
+       int Value;
      public Submarine() {
       
     }
@@ -84,7 +86,19 @@ public class Submarine extends javax.swing.JFrame implements Observer {
 
         jLabel2.setText("Soldier Count");
 
+        jSpinner1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinner1StateChanged(evt);
+            }
+        });
+
         jLabel3.setText("Ammo Count");
+
+        jSpinner2.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinner2StateChanged(evt);
+            }
+        });
 
         jCheckBox1.setText("Position");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -236,8 +250,19 @@ public class Submarine extends javax.swing.JFrame implements Observer {
 
     private void jSlider1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSlider1StateChanged
         // TODO add your handling code here:
+        Value=(int)jSlider1.getValue();
   
     }//GEN-LAST:event_jSlider1StateChanged
+
+    private void jSpinner1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner1StateChanged
+        // TODO add your handling code here:
+        spinnerValue = (int) jSpinner1.getValue();
+    }//GEN-LAST:event_jSpinner1StateChanged
+
+    private void jSpinner2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner2StateChanged
+        // TODO add your handling code here:
+        Ammo = (int) jSpinner2.getValue();
+    }//GEN-LAST:event_jSpinner2StateChanged
 
     /**
      * @param args the command line arguments
@@ -287,14 +312,19 @@ public class Submarine extends javax.swing.JFrame implements Observer {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
-    public static javax.swing.JSlider jSlider1;
+    private javax.swing.JSlider jSlider1;
     private javax.swing.JSlider jSlider2;
-    public static javax.swing.JSpinner jSpinner1;
-    public static javax.swing.JSpinner jSpinner2;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JSpinner jSpinner2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel messageSub;
     // End of variables declaration//GEN-END:variables
-
+ public int[] getDetails(){
+        
+        int[] ar = {spinnerValue,Ammo, Value};
+        return ar;
+       
+} 
     
     
       @Override

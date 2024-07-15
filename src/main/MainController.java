@@ -269,24 +269,22 @@ public class MainController extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-          Helicopter helicopter=new Helicopter();
+          /*Helicopter helicopter=new Helicopter();
           Tank tank=new Tank();
-          Submarine submarine=new Submarine();
+          Submarine submarine=new Submarine();*/
           
         //System.out.println(spinnerValue);   
              
       String selectedItem = (String) jComboBox2.getSelectedItem(); 
-      
+      int[] details = observable.setDetails(selectedItem);
             
       
         // System.out.println(selectedItem);
-         if(selectedItem=="Helicopter"){
-            jLabel9.setText(""+(int)helicopter.jSlider1.getValue());                      
-           jLabel7.setText(""+(int) helicopter.jSpinner1.getValue());
-          jLabel8.setText(""+(int) helicopter.jSpinner2.getValue());
+                   jLabel9.setText(""+details[0]);                      
+           jLabel7.setText(""+details[1]);
+          jLabel8.setText(""+details[2]);
             
-         }
-         if(selectedItem=="Tank"){
+         /*         if(selectedItem=="Tank"){
             jLabel9.setText(""+(int)tank.jSlider1.getValue());                
            jLabel7.setText(""+(int) tank.jSpinner1.getValue());
              jLabel8.setText(""+(int) tank.jSpinner2.getValue());
@@ -297,7 +295,7 @@ public class MainController extends javax.swing.JFrame {
            jLabel7.setText(""+(int) submarine.jSpinner1.getValue());
           jLabel8.setText(""+(int) submarine.jSpinner2.getValue());
             
-         }
+         }*/
            
     }//GEN-LAST:event_jButton1ActionPerformed
 
