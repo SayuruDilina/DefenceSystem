@@ -45,30 +45,30 @@ public class MainController extends javax.swing.JFrame {
 
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        chckInfo = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         AreaClearBox = new javax.swing.JCheckBox();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtMain = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
-        jSlider1 = new javax.swing.JSlider();
+        sldPosition = new javax.swing.JSlider();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        txtWarnings = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        txtMsgDisplay = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jComboBox3 = new javax.swing.JComboBox<>();
         jComboBox4 = new javax.swing.JComboBox<>();
-        jButton2 = new javax.swing.JButton();
+        btnSend = new javax.swing.JButton();
         jComboBox5 = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        lblSoldierCount = new javax.swing.JLabel();
+        lblAmmoCount = new javax.swing.JLabel();
+        lblFuel = new javax.swing.JLabel();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -78,15 +78,16 @@ public class MainController extends javax.swing.JFrame {
         setTitle("MainController");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Defence", "Helicopter", "Tank", "Submarine" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        chckInfo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Defence", "Helicopter", "Tank", "Submarine" }));
+        chckInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                chckInfoActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 34, 121, 39));
+        getContentPane().add(chckInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 34, 121, 39));
 
         jButton1.setBackground(new java.awt.Color(51, 255, 204));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setText("Collect Informations");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,9 +122,10 @@ public class MainController extends javax.swing.JFrame {
         jLabel3.setText("Ammo Count");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 153, -1, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        txtMain.setColumns(20);
+        txtMain.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        txtMain.setRows(5);
+        jScrollPane2.setViewportView(txtMain);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 91, 170, 88));
 
@@ -131,28 +133,31 @@ public class MainController extends javax.swing.JFrame {
         jLabel4.setText("Position");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 197, -1, -1));
 
-        jSlider1.setBackground(new java.awt.Color(0, 51, 51));
-        jSlider1.setForeground(new java.awt.Color(255, 255, 255));
-        jSlider1.setMajorTickSpacing(10);
-        jSlider1.setPaintLabels(true);
-        jSlider1.setPaintTicks(true);
-        jSlider1.setValue(10);
-        jSlider1.addChangeListener(new javax.swing.event.ChangeListener() {
+        sldPosition.setBackground(new java.awt.Color(0, 51, 51));
+        sldPosition.setForeground(new java.awt.Color(255, 255, 255));
+        sldPosition.setMajorTickSpacing(10);
+        sldPosition.setPaintLabels(true);
+        sldPosition.setPaintTicks(true);
+        sldPosition.setValue(10);
+        sldPosition.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jSlider1StateChanged(evt);
+                sldPositionStateChanged(evt);
             }
         });
-        getContentPane().add(jSlider1, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 242, 310, -1));
+        getContentPane().add(sldPosition, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 242, 310, -1));
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane3.setViewportView(jTextArea2);
+        txtWarnings.setColumns(20);
+        txtWarnings.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        txtWarnings.setForeground(new java.awt.Color(255, 0, 0));
+        txtWarnings.setRows(5);
+        jScrollPane3.setViewportView(txtWarnings);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 292, 203, -1));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 292, 203, 90));
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane4.setViewportView(jTextArea3);
+        txtMsgDisplay.setColumns(20);
+        txtMsgDisplay.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        txtMsgDisplay.setRows(5);
+        jScrollPane4.setViewportView(txtMsgDisplay);
 
         getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(329, 292, 213, -1));
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 20));
@@ -181,11 +186,12 @@ public class MainController extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(51, 255, 204));
-        jButton2.setText("Send");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnSend.setBackground(new java.awt.Color(51, 255, 204));
+        btnSend.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnSend.setText("Send");
+        btnSend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnSendActionPerformed(evt);
             }
         });
 
@@ -196,11 +202,14 @@ public class MainController extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        lblSoldierCount.setForeground(new java.awt.Color(255, 255, 255));
+        lblSoldierCount.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        lblAmmoCount.setForeground(new java.awt.Color(255, 255, 255));
+        lblAmmoCount.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        lblFuel.setForeground(new java.awt.Color(255, 255, 255));
+        lblFuel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -213,27 +222,22 @@ public class MainController extends javax.swing.JFrame {
                         .addComponent(jCheckBox1)
                         .addGap(32, 32, 32)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSend, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addGap(141, 141, 141)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblSoldierCount, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(lblAmmoCount, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblFuel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)))))
                 .addContainerGap(58, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 455, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,17 +247,17 @@ public class MainController extends javax.swing.JFrame {
                     .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblSoldierCount, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblFuel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblAmmoCount, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBox1)
                     .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSend, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -262,10 +266,10 @@ public class MainController extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void chckInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chckInfoActionPerformed
         // TODO add your handling code here:
    
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_chckInfoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -275,14 +279,14 @@ public class MainController extends javax.swing.JFrame {
           
         //System.out.println(spinnerValue);   
              
-      String selectedItem = (String) jComboBox2.getSelectedItem(); 
+      String selectedItem = (String)chckInfo.getSelectedItem(); 
       int[] details = observable.setDetails(selectedItem);
             
       
         // System.out.println(selectedItem);
-          jLabel7.setText(""+details[0]);                      
-          jLabel8.setText(""+details[1]);
-          jLabel9.setText(""+details[2]);
+          lblSoldierCount.setText(""+details[0]);                      
+          lblAmmoCount.setText(""+details[1]);
+          lblFuel.setText(""+details[2]);
             
          /*         if(selectedItem=="Tank"){
             jLabel9.setText(""+(int)tank.jSlider1.getValue());                
@@ -298,22 +302,22 @@ public class MainController extends javax.swing.JFrame {
          }*/
            
     }//GEN-LAST:event_jButton1ActionPerformed
-    boolean select = false;
+  //  boolean select = false;
     private void AreaClearBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AreaClearBoxActionPerformed
         // TODO add your handling code here:
         //AreaClearBox.addActionListener(new ActionListener() {
             //@Override
             //public void actionPerformed(ActionEvent e) {
-                //boolean select = AreaClearBox.isSelected();
+               boolean select = AreaClearBox.isSelected();
                 System.out.println(select);
 
-                if(select) {
-                    select = false;
-                     //observable.setArea(select);
-                } else {
-                    select = true;
-                    //observable.setArea(select);
-                }
+//                if(select) {
+//                    select = false;
+//                     //observable.setArea(select);
+//                } else {
+//                    select = true;
+//                    //observable.setArea(select);
+//                }
                 observable.setArea(select);
             
         //});
@@ -324,26 +328,26 @@ public class MainController extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_AreaClearBoxStateChanged
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendActionPerformed
         // TODO add your handling code here:
     
 
     // observable. SetMainmessge(message);
     
-                String message=jTextArea1.getText();
+                String message=txtMain.getText();
                 boolean select = jCheckBox1.isSelected();
                 String selectedItem = (String) jComboBox5.getSelectedItem();  
                 observable.SetPrivateMessage ( message,select, selectedItem);
   
      
       // observable.SetPrivateMessage(selectItem, selectedItem,PMessage);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnSendActionPerformed
 
-    private void jSlider1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSlider1StateChanged
+    private void sldPositionStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sldPositionStateChanged
         // TODO add your handling code here
-        observable.SetBtnEnable( jSlider1.getValue());
+        observable.SetBtnEnable( sldPosition.getValue());
         
-    }//GEN-LAST:event_jSlider1StateChanged
+    }//GEN-LAST:event_sldPositionStateChanged
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
@@ -401,11 +405,11 @@ public class MainController extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox AreaClearBox;
+    private javax.swing.JButton btnSend;
+    private javax.swing.JComboBox<String> chckInfo;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
@@ -415,22 +419,32 @@ public class MainController extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    public static javax.swing.JLabel jLabel7;
-    public static javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JSlider jSlider1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    public static javax.swing.JTextArea jTextArea3;
+    public static javax.swing.JLabel lblAmmoCount;
+    private javax.swing.JLabel lblFuel;
+    public static javax.swing.JLabel lblSoldierCount;
+    private javax.swing.JSlider sldPosition;
+    private javax.swing.JTextArea txtMain;
+    public static javax.swing.JTextArea txtMsgDisplay;
+    public static javax.swing.JTextArea txtWarnings;
     // End of variables declaration//GEN-END:variables
 
+    
+    public void OxygenLevelWarning(String OxygenLevel){
+          txtWarnings.append("\n"+OxygenLevel);
+} 
+    public void DieWarning(String SoldierDied){
+     txtWarnings.append("\n"+SoldierDied);
+    }
+    public void Warning(String warning){
+            txtWarnings.append("\n"+warning);
+}
   public void SendPriavteMessage(String privateMessage ){
    
-   jTextArea3.append("\n"+privateMessage);
+   txtMsgDisplay.append("\n"+privateMessage);
   System.out.println(privateMessage);
   
   }
@@ -443,7 +457,8 @@ public class MainController extends javax.swing.JFrame {
 public  void Details2(int Ammo ){
   
   ValueAmmo=Ammo;
- jLabel8.setText(""+Ammo);
+ lblAmmoCount.setText(""+Ammo);
       System.out.println(Value);  
   }
 }
+

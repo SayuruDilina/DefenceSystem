@@ -43,202 +43,191 @@ public class Submarine extends javax.swing.JFrame implements Observer {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        messageSub = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        SonarBtn = new javax.swing.JButton();
-        ThomohawkBtn = new javax.swing.JButton();
-        TridentBtn = new javax.swing.JButton();
+        lblmessageSub = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jSpinner1 = new javax.swing.JSpinner();
         jLabel3 = new javax.swing.JLabel();
         jSpinner2 = new javax.swing.JSpinner();
         jCheckBox1 = new javax.swing.JCheckBox();
         jScrollPane1 = new javax.swing.JScrollPane();
-        SumraineMainTextArea = new javax.swing.JTextArea();
-        jTextField1 = new javax.swing.JTextField();
-        SendSubmarineBtn = new javax.swing.JButton();
+        txtSumraineMain = new javax.swing.JTextArea();
+        txtSubmarine = new javax.swing.JTextField();
+        btnSendSubmarine = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jSlider1 = new javax.swing.JSlider();
-        jSlider2 = new javax.swing.JSlider();
+        sldFuel = new javax.swing.JSlider();
+        sldOxygen = new javax.swing.JSlider();
+        jPanel1 = new javax.swing.JPanel();
+        btnTrident = new javax.swing.JButton();
+        btnSonar = new javax.swing.JButton();
+        btnThomohawk = new javax.swing.JButton();
+        btnShoot = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Submarine");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        messageSub.setText("Area Not Cleared");
+        lblmessageSub.setForeground(new java.awt.Color(255, 255, 255));
+        lblmessageSub.setText("Area Not Cleared");
+        getContentPane().add(lblmessageSub, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 9, -1, -1));
 
-        jButton1.setText("Shoot");
-        jButton1.setEnabled(false);
-
-        SonarBtn.setText("SonarOpearation");
-        SonarBtn.setEnabled(false);
-        SonarBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SonarBtnActionPerformed(evt);
-            }
-        });
-
-        ThomohawkBtn.setText("Thomohawk MIissile");
-        ThomohawkBtn.setEnabled(false);
-
-        TridentBtn.setText("Trident-2 Missile");
-        TridentBtn.setEnabled(false);
-
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Soldier Count");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(277, 9, -1, -1));
 
+        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(10, null, null, 1));
         jSpinner1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jSpinner1StateChanged(evt);
             }
         });
+        getContentPane().add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 6, -1, -1));
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Ammo Count");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 34, -1, -1));
 
+        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(10, null, null, 1));
         jSpinner2.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jSpinner2StateChanged(evt);
             }
         });
+        getContentPane().add(jSpinner2, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 34, -1, -1));
 
+        jCheckBox1.setBackground(new java.awt.Color(0, 92, 11));
+        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox1.setText("Position");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 103, -1, -1));
 
-        SumraineMainTextArea.setColumns(20);
-        SumraineMainTextArea.setRows(5);
-        jScrollPane1.setViewportView(SumraineMainTextArea);
+        txtSumraineMain.setColumns(20);
+        txtSumraineMain.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtSumraineMain.setRows(5);
+        jScrollPane1.setViewportView(txtSumraineMain);
 
-        SendSubmarineBtn.setText("Send");
-        SendSubmarineBtn.addActionListener(new java.awt.event.ActionListener() {
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 141, 441, 113));
+        getContentPane().add(txtSubmarine, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 266, 339, -1));
+
+        btnSendSubmarine.setBackground(new java.awt.Color(255, 255, 0));
+        btnSendSubmarine.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnSendSubmarine.setText("Send");
+        btnSendSubmarine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SendSubmarineBtnActionPerformed(evt);
+                btnSendSubmarineActionPerformed(evt);
             }
         });
+        getContentPane().add(btnSendSubmarine, new org.netbeans.lib.awtextra.AbsoluteConstraints(363, 266, 84, -1));
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Energy");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(463, 9, -1, -1));
 
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Oxygen");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(537, 9, -1, -1));
 
-        jSlider1.setMajorTickSpacing(10);
-        jSlider1.setOrientation(javax.swing.JSlider.VERTICAL);
-        jSlider1.setPaintLabels(true);
-        jSlider1.setPaintTicks(true);
-        jSlider1.addChangeListener(new javax.swing.event.ChangeListener() {
+        sldFuel.setBackground(new java.awt.Color(0, 92, 11));
+        sldFuel.setForeground(new java.awt.Color(255, 255, 255));
+        sldFuel.setMajorTickSpacing(10);
+        sldFuel.setOrientation(javax.swing.JSlider.VERTICAL);
+        sldFuel.setPaintLabels(true);
+        sldFuel.setPaintTicks(true);
+        sldFuel.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jSlider1StateChanged(evt);
+                sldFuelStateChanged(evt);
+            }
+        });
+        getContentPane().add(sldFuel, new org.netbeans.lib.awtextra.AbsoluteConstraints(463, 41, -1, 213));
+
+        sldOxygen.setBackground(new java.awt.Color(0, 92, 11));
+        sldOxygen.setForeground(new java.awt.Color(255, 255, 255));
+        sldOxygen.setMajorTickSpacing(10);
+        sldOxygen.setOrientation(javax.swing.JSlider.VERTICAL);
+        sldOxygen.setPaintLabels(true);
+        sldOxygen.setPaintTicks(true);
+        sldOxygen.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sldOxygenStateChanged(evt);
+            }
+        });
+        getContentPane().add(sldOxygen, new org.netbeans.lib.awtextra.AbsoluteConstraints(537, 41, -1, 213));
+
+        jPanel1.setBackground(new java.awt.Color(0, 92, 11));
+
+        btnTrident.setBackground(new java.awt.Color(255, 255, 0));
+        btnTrident.setText("Trident-2 Missile");
+        btnTrident.setEnabled(false);
+
+        btnSonar.setBackground(new java.awt.Color(255, 255, 0));
+        btnSonar.setText("SonarOpearation");
+        btnSonar.setEnabled(false);
+        btnSonar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSonarActionPerformed(evt);
             }
         });
 
-        jSlider2.setMajorTickSpacing(10);
-        jSlider2.setOrientation(javax.swing.JSlider.VERTICAL);
-        jSlider2.setPaintLabels(true);
-        jSlider2.setPaintTicks(true);
+        btnThomohawk.setBackground(new java.awt.Color(255, 255, 0));
+        btnThomohawk.setText("Thomohawk MIissile");
+        btnThomohawk.setEnabled(false);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jLabel3))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(messageSub)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel2)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(28, 28, 28))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(ThomohawkBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(SonarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(TridentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(48, 48, 48)
-                                .addComponent(jCheckBox1))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(SendSubmarineBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
-                                .addGap(6, 6, 6))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING))))
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSlider2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(18, 18, 18))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        btnShoot.setBackground(new java.awt.Color(255, 255, 0));
+        btnShoot.setText("Shoot");
+        btnShoot.setEnabled(false);
+        btnShoot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnShootActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(messageSub)
-                    .addComponent(jLabel2)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(3, 3, 3)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(SonarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ThomohawkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TridentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox1))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jSlider2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
-                        .addComponent(jSlider1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SendSubmarineBtn)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnThomohawk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnShoot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnSonar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnTrident, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(319, Short.MAX_VALUE))
         );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSonar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnShoot, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnTrident, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnThomohawk, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(188, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 310));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void SonarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SonarBtnActionPerformed
+    private void btnSonarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSonarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SonarBtnActionPerformed
+    }//GEN-LAST:event_btnSonarActionPerformed
 
-    private void SendSubmarineBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendSubmarineBtnActionPerformed
+    private void btnSendSubmarineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendSubmarineActionPerformed
         // TODO add your handling code here:
-         String privateMessage = jTextField1.getText();
+         String privateMessage = txtSubmarine.getText();
              mainController.SendPriavteMessage("Submarine:"+privateMessage);
-    }//GEN-LAST:event_SendSubmarineBtnActionPerformed
+    }//GEN-LAST:event_btnSendSubmarineActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
@@ -248,21 +237,51 @@ public class Submarine extends javax.swing.JFrame implements Observer {
         
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
-    private void jSlider1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSlider1StateChanged
+    private void sldFuelStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sldFuelStateChanged
         // TODO add your handling code here:
-        Value=(int)jSlider1.getValue();
+        Value=(int)sldFuel.getValue();
   
-    }//GEN-LAST:event_jSlider1StateChanged
+    }//GEN-LAST:event_sldFuelStateChanged
 
     private void jSpinner1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner1StateChanged
         // TODO add your handling code here:
         spinnerValue = (int) jSpinner1.getValue();
+        if (spinnerValue==0){
+        mainController.DieWarning("Submarime:Our All Soldiers Died Sorry Boss... ");
+        
+        }
     }//GEN-LAST:event_jSpinner1StateChanged
 
     private void jSpinner2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner2StateChanged
         // TODO add your handling code here:
         Ammo = (int) jSpinner2.getValue();
     }//GEN-LAST:event_jSpinner2StateChanged
+
+    private void btnShootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShootActionPerformed
+        // TODO add your handling code here:
+        int ammoCount=(int)jSpinner2.getValue();
+        if(ammoCount>0){
+            ammoCount--;
+            jSpinner2.setValue(ammoCount);
+                } 
+        if(ammoCount==0){
+            mainController.Warning("Submarine:Ammo Count is 0 \n Please  Help me!!!!");
+        
+        }
+    }//GEN-LAST:event_btnShootActionPerformed
+
+    private void sldOxygenStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sldOxygenStateChanged
+        // TODO add your handling code here:
+        int Oxygen=sldOxygen.getValue();
+        if(Oxygen<= 20){
+            mainController.OxygenLevelWarning("Oxygen Level is Running Low...");
+        
+        } if(Oxygen== 0){
+            mainController.OxygenLevelWarning("Our Oxygen is Over!!! Good Bye World ");
+        
+        }  
+        
+    }//GEN-LAST:event_sldOxygenStateChanged
 
     /**
      * @param args the command line arguments
@@ -300,24 +319,25 @@ public class Submarine extends javax.swing.JFrame implements Observer {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton SendSubmarineBtn;
-    private javax.swing.JButton SonarBtn;
-    private javax.swing.JTextArea SumraineMainTextArea;
-    private javax.swing.JButton ThomohawkBtn;
-    private javax.swing.JButton TridentBtn;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnSendSubmarine;
+    private javax.swing.JButton btnShoot;
+    private javax.swing.JButton btnSonar;
+    private javax.swing.JButton btnThomohawk;
+    private javax.swing.JButton btnTrident;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSlider jSlider1;
-    private javax.swing.JSlider jSlider2;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JSpinner jSpinner2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel messageSub;
+    private javax.swing.JLabel lblmessageSub;
+    private javax.swing.JSlider sldFuel;
+    private javax.swing.JSlider sldOxygen;
+    private javax.swing.JTextField txtSubmarine;
+    private javax.swing.JTextArea txtSumraineMain;
     // End of variables declaration//GEN-END:variables
  public int[] getDetails(){
         
@@ -330,10 +350,10 @@ public class Submarine extends javax.swing.JFrame implements Observer {
       @Override
      public void SendMessagePrivatelyFromMain(String MainSelected, boolean MainStatus, String privateMessage){
        if ( MainStatus == true && MainSelected.equals("Submarine")  ) {
-             SumraineMainTextArea.append("\n Private Message:"+privateMessage);
+             txtSumraineMain.append("\n Private Message:"+privateMessage);
           
         } else if(MainStatus==false){
-         SumraineMainTextArea.append(privateMessage+"\n"); 
+         txtSumraineMain.append(privateMessage+"\n"); 
          System.out.println("hi");
        }
      
@@ -343,10 +363,10 @@ public class Submarine extends javax.swing.JFrame implements Observer {
      @Override
     public void updateArea(boolean status){
 		  if (status == true) {
-             messageSub.setText("Area Cleared");
+             lblmessageSub.setText("Area Cleared");
           
         } else if (status == false) {
-            messageSub.setText("Area Not Cleared");
+            lblmessageSub.setText("Area Not Cleared");
         }
 	}
     
@@ -361,24 +381,24 @@ public class Submarine extends javax.swing.JFrame implements Observer {
      boolean select = jCheckBox1.isSelected();
      if (select== true) {
          if(Value>25){
-           jButton1.setEnabled(true);
+           btnShoot.setEnabled(true);
      }else{
-          jButton1.setEnabled(false);
+          btnShoot.setEnabled(false);
      }
          if(Value>50){
-           SonarBtn.setEnabled(true);
+           btnSonar.setEnabled(true);
      }else{
-          SonarBtn.setEnabled(false);
+          btnSonar.setEnabled(false);
      }
        if(Value>75){
-          ThomohawkBtn.setEnabled(true);
+          btnThomohawk.setEnabled(true);
      }else{
-         ThomohawkBtn.setEnabled(false);
+         btnThomohawk.setEnabled(false);
      }   
        if(Value>85){
-          TridentBtn.setEnabled(true);
+          btnTrident.setEnabled(true);
      }else{
-         TridentBtn.setEnabled(false);
+         btnTrident.setEnabled(false);
      }   
        
        

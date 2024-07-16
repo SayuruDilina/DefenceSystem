@@ -17,10 +17,10 @@ public class Observable {
     private String PMessage;
     private boolean MainStatus;
     private String MainSelected;
-        private  int spinnerValue;
+       // private  int spinnerValue;
     
     
-	private ArrayList<Observer>observerList=new ArrayList<>();
+	private final  ArrayList<Observer>observerList=new ArrayList<>();
 	
 	public void addWaterLevelObserver(Observer ob){
 		observerList.add(ob);
@@ -60,13 +60,13 @@ public class Observable {
 		}
 	}
         public int[] setDetails(String item){
-            if(item=="Helicopter"){
+            if(item.equals("Helicopter")){
                 return observerList.get(0).getDetails();
             }
-            if(item=="Submarine"){
+            if(item.equals("Submarine")){
                 return observerList.get(1).getDetails();
             }
-             if(item=="Tank"){
+             if(item.equals("Tank")){
                 return observerList.get(2).getDetails();
             }
             return null;

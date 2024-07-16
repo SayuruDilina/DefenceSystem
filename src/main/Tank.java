@@ -37,20 +37,20 @@ public class Tank extends javax.swing.JFrame implements Observer{
     private void initComponents() {
 
         AreaClearTank = new javax.swing.JLabel();
-        ShootbtnTank = new javax.swing.JButton();
-        MissileBtn = new javax.swing.JButton();
-        RedarBtn = new javax.swing.JButton();
-        RotateBtn = new javax.swing.JButton();
+        btnShootTank = new javax.swing.JButton();
+        btnMissile = new javax.swing.JButton();
+        btnRedar = new javax.swing.JButton();
+        btnRotate = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jSpinner1 = new javax.swing.JSpinner();
         jLabel2 = new javax.swing.JLabel();
         jSpinner2 = new javax.swing.JSpinner();
         jCheckBox1 = new javax.swing.JCheckBox();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TankTextMainArea = new javax.swing.JTextArea();
-        jTextField1 = new javax.swing.JTextField();
-        SendTankBtn = new javax.swing.JButton();
-        jSlider1 = new javax.swing.JSlider();
+        txtMainTank = new javax.swing.JTextArea();
+        txtTank = new javax.swing.JTextField();
+        btnSendTank = new javax.swing.JButton();
+        sldFuel = new javax.swing.JSlider();
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -61,35 +61,41 @@ public class Tank extends javax.swing.JFrame implements Observer{
         AreaClearTank.setText("Area Not Cleared");
         getContentPane().add(AreaClearTank, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 0, -1, -1));
 
-        ShootbtnTank.setBackground(new java.awt.Color(255, 255, 0));
-        ShootbtnTank.setText("Shoot");
-        ShootbtnTank.setEnabled(false);
-        getContentPane().add(ShootbtnTank, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 43, 116, 31));
-
-        MissileBtn.setBackground(new java.awt.Color(255, 255, 0));
-        MissileBtn.setText("Missile Operation");
-        MissileBtn.setEnabled(false);
-        MissileBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnShootTank.setBackground(new java.awt.Color(255, 255, 0));
+        btnShootTank.setText("Shoot");
+        btnShootTank.setEnabled(false);
+        btnShootTank.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MissileBtnActionPerformed(evt);
+                btnShootTankActionPerformed(evt);
             }
         });
-        getContentPane().add(MissileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 43, -1, 31));
+        getContentPane().add(btnShootTank, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 43, 116, 31));
 
-        RedarBtn.setBackground(new java.awt.Color(255, 255, 0));
-        RedarBtn.setText("Redar Operation");
-        RedarBtn.setEnabled(false);
-        getContentPane().add(RedarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 86, -1, 32));
+        btnMissile.setBackground(new java.awt.Color(255, 255, 0));
+        btnMissile.setText("Missile Operation");
+        btnMissile.setEnabled(false);
+        btnMissile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMissileActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnMissile, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 43, -1, 31));
 
-        RotateBtn.setBackground(new java.awt.Color(255, 255, 0));
-        RotateBtn.setText("Rotate Shooting");
-        RotateBtn.setEnabled(false);
-        getContentPane().add(RotateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 86, 122, 32));
+        btnRedar.setBackground(new java.awt.Color(255, 255, 0));
+        btnRedar.setText("Redar Operation");
+        btnRedar.setEnabled(false);
+        getContentPane().add(btnRedar, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 86, -1, 32));
+
+        btnRotate.setBackground(new java.awt.Color(255, 255, 0));
+        btnRotate.setText("Rotate Shooting");
+        btnRotate.setEnabled(false);
+        getContentPane().add(btnRotate, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 86, 130, 32));
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Soldier Count");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 18, -1, -1));
 
+        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(10, null, null, 1));
         jSpinner1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jSpinner1StateChanged(evt);
@@ -101,6 +107,7 @@ public class Tank extends javax.swing.JFrame implements Observer{
         jLabel2.setText("Ammo Count");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 46, -1, -1));
 
+        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(10, null, null, 1));
         jSpinner2.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jSpinner2StateChanged(evt);
@@ -113,34 +120,36 @@ public class Tank extends javax.swing.JFrame implements Observer{
         jCheckBox1.setText("Position");
         getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 98, -1, -1));
 
-        TankTextMainArea.setColumns(20);
-        TankTextMainArea.setRows(5);
-        jScrollPane1.setViewportView(TankTextMainArea);
+        txtMainTank.setColumns(20);
+        txtMainTank.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtMainTank.setRows(5);
+        jScrollPane1.setViewportView(txtMainTank);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 149, 423, 99));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 266, 325, -1));
+        getContentPane().add(txtTank, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 266, 325, -1));
 
-        SendTankBtn.setBackground(new java.awt.Color(255, 255, 0));
-        SendTankBtn.setText("Send");
-        SendTankBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnSendTank.setBackground(new java.awt.Color(255, 255, 0));
+        btnSendTank.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnSendTank.setText("Send");
+        btnSendTank.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SendTankBtnActionPerformed(evt);
+                btnSendTankActionPerformed(evt);
             }
         });
-        getContentPane().add(SendTankBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(374, 266, 84, -1));
+        getContentPane().add(btnSendTank, new org.netbeans.lib.awtextra.AbsoluteConstraints(374, 266, 84, -1));
 
-        jSlider1.setBackground(new java.awt.Color(0, 92, 11));
-        jSlider1.setForeground(new java.awt.Color(255, 255, 255));
-        jSlider1.setMajorTickSpacing(10);
-        jSlider1.setOrientation(javax.swing.JSlider.VERTICAL);
-        jSlider1.setPaintLabels(true);
-        jSlider1.setPaintTicks(true);
-        jSlider1.addChangeListener(new javax.swing.event.ChangeListener() {
+        sldFuel.setBackground(new java.awt.Color(0, 92, 11));
+        sldFuel.setForeground(new java.awt.Color(255, 255, 255));
+        sldFuel.setMajorTickSpacing(10);
+        sldFuel.setOrientation(javax.swing.JSlider.VERTICAL);
+        sldFuel.setPaintLabels(true);
+        sldFuel.setPaintTicks(true);
+        sldFuel.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jSlider1StateChanged(evt);
+                sldFuelStateChanged(evt);
             }
         });
-        getContentPane().add(jSlider1, new org.netbeans.lib.awtextra.AbsoluteConstraints(472, 6, -1, 282));
+        getContentPane().add(sldFuel, new org.netbeans.lib.awtextra.AbsoluteConstraints(472, 6, -1, 282));
 
         jPanel1.setBackground(new java.awt.Color(0, 92, 11));
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 300));
@@ -148,19 +157,23 @@ public class Tank extends javax.swing.JFrame implements Observer{
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void SendTankBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendTankBtnActionPerformed
+    private void btnSendTankActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendTankActionPerformed
         // TODO add your handling code here:
-        String privateMessage = jTextField1.getText();
+        String privateMessage = txtTank.getText();
              mainController.SendPriavteMessage("Tank:"+privateMessage);
-    }//GEN-LAST:event_SendTankBtnActionPerformed
+    }//GEN-LAST:event_btnSendTankActionPerformed
 
-    private void MissileBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MissileBtnActionPerformed
+    private void btnMissileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMissileActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MissileBtnActionPerformed
+    }//GEN-LAST:event_btnMissileActionPerformed
 
     private void jSpinner1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner1StateChanged
         // TODO add your handling code here:
         spinnerValue = (int) jSpinner1.getValue();
+         if (spinnerValue==0){
+        mainController.DieWarning("Tank:Our All Soldiers Died Sorry Boss... ");
+        
+        }
     }//GEN-LAST:event_jSpinner1StateChanged
 
     private void jSpinner2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner2StateChanged
@@ -168,10 +181,23 @@ public class Tank extends javax.swing.JFrame implements Observer{
         Ammo = (int) jSpinner2.getValue();
     }//GEN-LAST:event_jSpinner2StateChanged
 
-    private void jSlider1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSlider1StateChanged
+    private void sldFuelStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sldFuelStateChanged
         // TODO add your handling code here:
-        Value=(int)jSlider1.getValue();
-    }//GEN-LAST:event_jSlider1StateChanged
+        Value=(int)sldFuel.getValue();
+    }//GEN-LAST:event_sldFuelStateChanged
+
+    private void btnShootTankActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShootTankActionPerformed
+        // TODO add your handling code here:
+        int ammoCount=(int)jSpinner2.getValue();
+        if(ammoCount>0){
+            ammoCount--;
+            jSpinner2.setValue(ammoCount);
+                } 
+        if(ammoCount==0){
+            mainController.Warning("Tank:Ammo Count is 0 \n Please  Help me!!!!");
+        
+        }
+    }//GEN-LAST:event_btnShootTankActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,21 +236,21 @@ public class Tank extends javax.swing.JFrame implements Observer{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AreaClearTank;
-    private javax.swing.JButton MissileBtn;
-    private javax.swing.JButton RedarBtn;
-    private javax.swing.JButton RotateBtn;
-    private javax.swing.JButton SendTankBtn;
-    private javax.swing.JButton ShootbtnTank;
-    private javax.swing.JTextArea TankTextMainArea;
+    private javax.swing.JButton btnMissile;
+    private javax.swing.JButton btnRedar;
+    private javax.swing.JButton btnRotate;
+    private javax.swing.JButton btnSendTank;
+    private javax.swing.JButton btnShootTank;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSlider jSlider1;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JSpinner jSpinner2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JSlider sldFuel;
+    private javax.swing.JTextArea txtMainTank;
+    private javax.swing.JTextField txtTank;
     // End of variables declaration//GEN-END:variables
 
      public int[] getDetails(){
@@ -237,10 +263,10 @@ public class Tank extends javax.swing.JFrame implements Observer{
      public void SendMessagePrivatelyFromMain(String MainSelected, boolean MainStatus, String privateMessage){
        System.out.println(MainSelected);
          if ( MainStatus == true && MainSelected =="Tank"  ) {
-           TankTextMainArea.append("\n Private Message:"+privateMessage);
+           txtMainTank.append("\n Private Message:"+privateMessage);
          
         } else if(MainStatus==false){
-        TankTextMainArea.append(privateMessage+"\n"); 
+        txtMainTank.append(privateMessage+"\n"); 
            System.out.println("hi");
        } 
      
@@ -267,24 +293,24 @@ public class Tank extends javax.swing.JFrame implements Observer{
      boolean select = jCheckBox1.isSelected();
      if (select== true) {
          if(Value>25){
-         ShootbtnTank.setEnabled(true);
+         btnShootTank.setEnabled(true);
      }else{
-          ShootbtnTank.setEnabled(false);
+          btnShootTank.setEnabled(false);
      }
       if(Value>50){
-         MissileBtn.setEnabled(true);
+         btnMissile.setEnabled(true);
      }else{
-          MissileBtn.setEnabled(false);
+          btnMissile.setEnabled(false);
      }   
          if(Value>75){
-        RedarBtn.setEnabled(true);
+        btnRedar.setEnabled(true);
      }else{
-         RedarBtn.setEnabled(false);
+         btnRedar.setEnabled(false);
      }   
            if(Value>85){
-       RotateBtn.setEnabled(true);
+       btnRotate.setEnabled(true);
      }else{
-        RotateBtn.setEnabled(false);
+        btnRotate.setEnabled(false);
      }   
      }
      
