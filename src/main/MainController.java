@@ -78,7 +78,7 @@ public class MainController extends javax.swing.JFrame {
         setTitle("MainController");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        chckInfo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Defence", "Helicopter", "Tank", "Submarine" }));
+        chckInfo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SelectDefence", "Helicopter", "Tank", "Submarine" }));
         chckInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chckInfoActionPerformed(evt);
@@ -282,7 +282,7 @@ public class MainController extends javax.swing.JFrame {
       String selectedItem = (String)chckInfo.getSelectedItem(); 
       int[] details = observable.setDetails(selectedItem);
             
-      
+     
         // System.out.println(selectedItem);
           lblSoldierCount.setText(""+details[0]);                      
           lblAmmoCount.setText(""+details[1]);

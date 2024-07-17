@@ -341,7 +341,7 @@ public class Submarine extends javax.swing.JFrame implements Observer {
     // End of variables declaration//GEN-END:variables
  public int[] getDetails(){
         
-        int[] ar = {spinnerValue,Ammo, Value};
+        int[] ar = {(int) jSpinner1.getValue(),(int)jSpinner2.getValue(), sldFuel.getValue()};
         return ar;
        
 } 

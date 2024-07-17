@@ -298,7 +298,7 @@ public class Helicopter extends javax.swing.JFrame implements Observer {
 
     public int[] getDetails(){
         
-        int[] ar = {spinnerValue,Ammo, Value};
+        int[] ar = {(int) jSpinner1.getValue(),(int)jSpinner2.getValue(), sldFuel.getValue()};
         return ar;
        
 } 

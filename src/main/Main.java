@@ -25,13 +25,13 @@ public class Main {
 //                   helicopter.setVisible(true);
         MainController mainController = new MainController(observable);
        Helicopter helicopter = new Helicopter(mainController);
-               observable.addWaterLevelObserver(helicopter);
+               observable.addObserver(helicopter);
                         
                 
                 helicopter.setVisible(true);
        
                Submarine   submarine  = new  Submarine (mainController);
-               observable.addWaterLevelObserver( submarine );
+               observable.addObserver( submarine );
                         
                 
 //                helicopter.setVisible(true);
@@ -40,7 +40,7 @@ public class Main {
                     submarine.setVisible(true);
                  
                       Tank  tank  = new  Tank (mainController);
-               observable.addWaterLevelObserver(tank);
+               observable.addObserver(tank);
                
 //                 Tank  tank=new  Tank(); 
 //               observable.addWaterLevelObserver(tank);

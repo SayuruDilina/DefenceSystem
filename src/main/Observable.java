@@ -22,7 +22,7 @@ public class Observable {
     
 	private final  ArrayList<Observer>observerList=new ArrayList<>();
 	
-	public void addWaterLevelObserver(Observer ob){
+	public void addObserver(Observer ob){
 		observerList.add(ob);
 	}	
 	
@@ -69,7 +69,7 @@ public class Observable {
              if(item.equals("Tank")){
                 return observerList.get(2).getDetails();
             }
-            return null;
+          return null;
         
         }
 	public void notifyArea(){
